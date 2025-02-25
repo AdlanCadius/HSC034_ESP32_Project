@@ -3,6 +3,8 @@ import dht
 import time
 import network
 import ubinascii
+import ujson
+import urequests
 from umqtt.simple import MQTTClient
 from ssd1306 import SSD1306_I2C
 
