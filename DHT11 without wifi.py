@@ -2,8 +2,8 @@ import machine
 import dht
 import time
 
-# Inisialisasi sensor DHT11 di pin D15
-sensor = dht.DHT11(machine.Pin(15))
+# Inisialisasi sensor DHT11 (ubah pin)
+sensor = dht.DHT11(machine.Pin(5))
 
 while True:
     try:
@@ -16,4 +16,4 @@ while True:
     except OSError as e:
         print("Gagal membaca sensor!", e)
     
-    time.sleep(2)  # Tunggu 2 detik sebelum membaca lagi
+    time.sleep(2) 

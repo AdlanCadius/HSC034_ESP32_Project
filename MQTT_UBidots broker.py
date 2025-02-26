@@ -33,7 +33,7 @@ def connect_mqtt():
     print("Connected to Ubidots MQTT Broker")
     return client
 
-# Inisialisasi sensor DHT11 di pin D5
+# Inisialisasi sensor DHT11 (ubah pin)
 sensor = dht.DHT11(machine.Pin(5))
 
 connect_wifi()
@@ -55,3 +55,4 @@ while True:
         print("Gagal membaca sensor!", e)
     
     time.sleep(60)
+#ubah waktu antar loop
