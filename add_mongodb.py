@@ -39,17 +39,17 @@ def connect_mqtt():
     print("Connected to Ubidots MQTT Broker")
     return client
 
-# Fungsi mengirim data ke MongoDB melalui HTTP
+# Koneksi ke MongoDB lewat HTTP
 def send_to_mongodb(value):
     payload = ujson.dumps({"temperature": value})
     headers = {'Content-Type': 'application/json'}
     response = urequests.post(MONGODB_URL, data=payload, headers=headers)
     response.close()
 
-# Inisialisasi sensor DHT11 di pin D5
+# Inisialisasi sensor DHT11 (ubah pin)
 sensor = dht.DHT11(machine.Pin(5))
 
-# Inisialisasi layar OLED (SSD1306) di GPIO 21 (SDA) dan 22 (SCL)
+# Inisialisasi layar OLED
 i2c = machine.SoftI2C(scl=machine.Pin(22), sda=machine.Pin(21))
 display = SSD1306_I2C(128, 64, i2c)
 
